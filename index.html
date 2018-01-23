@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>正品溯源</title>
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="dist/hire.css">
+    <script>
+      (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth<=1080){
+                            docEl.style.fontSize = 100 * (clientWidth /1080) + 'px';
+                        }else{
+                            docEl.style.fontSize = 100+'px'
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);    
+        
+    </script>
+        <!-- <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=8ccc86f49cee501ee03b39ef82062c87&plugin=AMap.Geocoder"></script> -->
+  </head>
+  <body>
+    <div id="app">
+      <transition name="slide-fade">
+        <router-view></router-view>
+      </transition>
+    </div>
+    
+    <script src="./src/js/appCheck.js"></script>
+    <script src="./src/js/zepto.min.js"></script>
+    <script src="dist/lib/plupload/js/moxie.js"></script>
+    <script src="dist/lib/plupload/js/plupload.dev.js"></script>
+    <script src="dist/lib/qiniu/dist/qiniu.js"></script>
+    <script src="dist/layer-mana.js"></script>
+    <script src="dist/lrz.mobile.min.js"></script>
+    <script src="dist/hire.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+    <script> 
+        /*$(function(){
+            setTimeout(function(){
+                 if((location.href.indexOf('goodsDetails') != -1 )|| (location.href.indexOf('optimization') != -1) || (location.href.indexOf('newsDetails') != -1 ) || (location.href.indexOf('aboutUs') != -1 ) || (location.href.indexOf('agreement') != -1 ) || (location.href.indexOf('cooperation') != -1 ) || (location.href.indexOf('integralRules') != -1 )||(location.href.indexOf('web1') != -1 )||(location.href.indexOf('web2') != -1 )){
+                }else{
+                    checkApp();
+                }
+            },500)
+           
+            function checkApp(){
+                $.ajax({
+                  type:'POST',
+                  url:'/genuine/public/needRedirect',
+                  success:function(data){
+                    if(data.errorCode == -1){
+                      window.location.href = 'http://app.izheng.org/genuine/public/user'
+                    }else if(data.errorCode == 0){
+
+                    }
+                  },
+                  error:function(){
+                    alert('系统错误!请刷新')
+                  }
+                })
+            }
+            
+        })
+        */
+    </script>
+
+    
+  </body>
+</html>
